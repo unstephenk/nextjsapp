@@ -1,4 +1,5 @@
 import { themeFrontColor } from "./banner.module.css"
+import HouseRow from "./houseRow";
 
 const houses = [
     {
@@ -33,13 +34,7 @@ const HouseList = () => {
                 </thead>
 
                 <tbody>
-                    {houses.map(h => (
-                        <tr key={h.id}>
-                            <td>{h.address}</td>
-                            <td>{h.country}</td>
-                            <td>{h.price}</td>
-                        </tr>
-                    ))}
+                    {houses.map(h => <HouseRow key={h.id} house={h} />)}
                 </tbody>
             </table>
         </>
