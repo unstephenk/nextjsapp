@@ -1,10 +1,15 @@
+import HouseList from "./houseList";
+
 const { default: Banner } = require("./banner")
 
 const App = () => {
     return (
-        <div>
-            <Banner headerText="Providing houses all over the world" />;
-        </div>
+        <>
+            <Banner>
+                <div>Providing houses all over the world</div>
+            </Banner>
+            <HouseList />
+        </>
     );
 };
 
