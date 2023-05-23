@@ -2,7 +2,7 @@ const Banner = () => {
     return (
         <header>
             <div>
-                <img src="./GloboLogo.png"></img>
+                <img src="./GloboLogo.png"/>
             </div>
             
             <div>
