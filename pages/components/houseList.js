@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { themeFrontColor } from "./banner.module.css"
 import HouseRow from "./houseRow";
 
@@ -18,7 +18,17 @@ const houseArray = [
 ];
 
 const HouseList = () => {
-    const [houses, setHouses] = useState(houseArray);
+    const [houses, setHouses] = useState([]);
+
+    useEffect(() => {
+        const fetchHouses = async () => {
+            const response = await fetch("/api/houses");
+            const houses = await response.json();
+
+            setHouses(houses)
+        }
+        fetchHouses();
+    })
 
     const addHouse = () => {
         setHouses([
