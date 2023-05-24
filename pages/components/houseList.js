@@ -1,21 +1,6 @@
 import { useEffect, useState } from "react";
-import { themeFrontColor } from "./banner.module.css"
 import HouseRow from "./houseRow";
-
-const houseArray = [
-    {
-        id: 1,
-        address: "12 Valley of Kings, Geneva",
-        country: "Switzerland",
-        price: 900000,
-    },
-    {
-        id: 2,
-        address: "89 Road of Forks, Bern",
-        country: "Switzerland",
-        price: 500000,
-    },
-];
+import HouseAdd from "./houseAdd";
 
 const HouseList = () => {
     const [houses, setHouses] = useState([]);
@@ -28,19 +13,7 @@ const HouseList = () => {
             setHouses(houses)
         }
         fetchHouses();
-    }, []);
-
-    const addHouse = () => {
-        setHouses([
-            ...houses,
-            {
-                id: 3,
-                address: "12 Valley of Kings, Geneva",
-                country: "France",
-                price: 700000,
-            },
-        ]);
-    }
+    });
 
     return (
         <>
@@ -62,9 +35,7 @@ const HouseList = () => {
                     {houses.map(h => <HouseRow key={h.id} house={h} />)}
                 </tbody>
             </table>
-            <button className="btn btn-primary" onClick={addHouse}>
-                Add
-            </button>
+            <HouseAdd />
         </>
     );
 };
