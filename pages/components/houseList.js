@@ -28,7 +28,7 @@ const HouseList = () => {
             setHouses(houses)
         }
         fetchHouses();
-    })
+    }, []);
 
     const addHouse = () => {
         setHouses([
