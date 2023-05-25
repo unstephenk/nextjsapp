@@ -6,6 +6,11 @@ import House from "./house";
 const App = () => {
     const [selectedHouse, setSelectedHouse] = useState();
 
+    // Run validations on the house to ensure its actually a house
+    const setSelectedHouseWrapper = (house) => {
+        setSelectedHouse(house);
+    }
+
     return (
         <>
             <Banner>
@@ -14,7 +19,7 @@ const App = () => {
             {selectedHouse ? (
             <House house={selectedHouse}/>
             ) : (
-            <HouseList selectHouse={setSelectedHouse}/>)
+            <HouseList selectHouse={setSelectedHouseWrapper}/>)
             }
         </>
     );
