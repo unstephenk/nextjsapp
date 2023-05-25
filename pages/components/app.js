@@ -7,7 +7,7 @@ const navigationContext = React.createContext(navValues.home);
 
 const App = () => {
     const navigate = useCallback(
-        (navTo) => setNav({current: navTo, navigate}), []
+        (navTo, param) => setNav({current: navTo, param, navigate}), []
     );
 
     const [nav, setNav] = useState({ current: navValues.home, navigate});
